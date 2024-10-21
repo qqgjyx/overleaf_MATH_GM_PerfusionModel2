@@ -1,0 +1,99 @@
+% !TEX root = ../digraph-main.tex
+% packages.tex
+
+\usetheme{Madrid}
+\usepackage{appendixnumberbeamer}
+\usefonttheme[onlymath]{serif}
+
+% \usepackage{pgfplots}
+%\usepackage{chronosys}
+
+% fix booktabs compatibility issue
+%\usepackage{etex}
+%\usepackage{animate}
+
+% math
+%\usepackage{sansmathaccent}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}                 % Theorems/definitions
+%\usepackage{mathrsfs}
+\usepackage{array}
+\usepackage{mathtools}
+
+% SI units
+\usepackage[detect-all]{siunitx}
+
+% graphics
+\usepackage[compatibility=false,justification=raggedright,
+            font=scriptsize,labelformat=empty,skip=0pt,
+            singlelinecheck=true]{caption}
+\usepackage[labelformat=empty,justification=raggedright]{subcaption}
+% \usepackage{graphicx}
+
+\usepackage{xparse,fp}
+%\usepackage{datenumber,xparse,fp}
+\usepackage{pgf}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{decorations.text}
+\usetikzlibrary{automata, positioning}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{tikzmark}
+\usetikzlibrary{calc}
+\usepackage{adjustbox}
+
+% tables
+\usepackage{multirow}
+\usepackage{booktabs}
+%\usepackage{colortbl}
+%\usepackage{diagbox}
+%\usepackage{arydshln} % dash line in tables
+%\usepackage{makecell}
+\usepackage{scalerel}
+
+% clever references
+\usepackage{cleveref}
+
+% fonts
+%% \usepackage{sfmath}
+\usepackage{textcomp}
+%\usepackage[resetfonts]{cmap}
+\usepackage[utf8]{inputenc}
+% \usepackage{natbib}
+
+\usepackage[hyperref=true,
+            url=false,
+            isbn=false,
+            backref=false,
+            doi=false,
+            style=authoryear,
+            firstinits=true,
+            citereset=section,
+            maxcitenames=1,
+            maxbibnames=100,
+            backend=bibtex, % while checking on one of my (newest) systems, this option was needed to generate bibliography
+            block=none]{biblatex}
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+
+%\usepackage{fancybox} 
+%\usepackage{framed,color}
+
+% algorithm listing
+\usepackage[noend]{algorithm2e}
+
+% lists
+% \usepackage{paralist}
+\usepackage{enumerate}
+
+
+%\usepackage[export]{adjustbox}
+
+
+% fix cref
+\crefname{proposition}{Proposition}{Propositions}
+\Crefname{proposition}{Proposition}{Propositions}
+
+\usepackage{bm}

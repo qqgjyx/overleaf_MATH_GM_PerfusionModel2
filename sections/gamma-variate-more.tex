@@ -1,0 +1,117 @@
+% gamma-variate.tex
+%
+% Drafted by Juntang on Sep 23, 2024
+% 
+
+\begin{frame}
+  \frametitle{Gamma Variate Function - More}
+
+    \begin{columns}
+    %% double-column layout 
+    \begin{column}{0.45\textwidth}                 %% Left Column 
+    {\footnotesize
+    \cite{davenportDerivationGammaVariateRelationship1983}
+
+    \begin{itemize}
+        \item ODE from Indicator-Dilution Theory \newline (\cite{zierlerTheoreticalBasisIndicatorDilution1962}):
+    \end{itemize}
+    \begin{equation}
+    \frac{dC_{i}(t)}{dt} = \frac{Q}{V} (C_{i-1}(t) - C_{i}(t))
+    \end{equation}
+    {\tiny
+    where $i$ is the indice of the chamber
+    
+    \(
+    C_{1}(t) = C_{0}e^{-t/\sigma} 
+
+    C_{2}(t) = C_{0}\frac{t}{\sigma}e^{-t/\sigma} 
+
+    C_{3}(t) = \frac{C_{0}}{2}(\frac{t}{\sigma})^{2}e^{-t/\sigma}
+    \)}
+    \vspace{-8pt}
+    \begin{equation}
+    \Leftrightarrow C_{n}(t) = \frac{C}{(n-1)!}(\frac{t}{\sigma})^{n-1}e^{-t/\sigma}
+    \end{equation}
+    {\tiny
+    let $\alpha = n - 1, \; C_0 = \frac{\Gamma(\alpha)}{\sigma\Gamma(\alpha+1)} \Leftrightarrow \int^{\infty}_{0}C(t)dt = 0 $
+    }
+    \vspace{-8pt}
+    \begin{equation}
+    \Leftrightarrow C(\alpha, \sigma, t) = \frac{t^\alpha}{\Gamma(\alpha+1)\sigma^{\alpha+1}}e^{-t/\sigma}
+    \end{equation}
+
+    
+    }
+    \end{column}
+    
+    \hspace*{4em}                                                          %%  make space between columns 
+    
+    \begin{column}{0.5\textwidth}                                %% Right Column 
+    {\tiny
+    \begin{block}{\textwidth}
+        \tiny
+        \cite{sheppardMathematicalConsiderationsIndicator1954}
+        \begin{itemize}
+            \item Stochasic model where tracer follow $1d$ random walk; Poisson distribution:
+        \end{itemize}
+        \begin{equation}
+            C(t) = \frac{t^{n-1}}{(n-1)!(1/n)^{n}}e^{-nt}
+        \end{equation}
+        reduced to a GVF by substituting
+    
+        \(
+        \alpha = n - 1
+    
+        \sigma = 1 / n
+        \)
+        \begin{itemize}
+            \item CON: not $\sigma > 1$ (\cite{thompsonIndicatorTransitTime1964})
+        \end{itemize}
+    \end{block}
+
+    \begin{itemize}
+        \item PRO: deterministic, theoretical $\rightarrow$ physiologic
+    \end{itemize}
+    {\tiny
+    \(
+    L[f(s)] = \int_0^\infty e^{-st} f(t) dt
+    \)
+    and
+    \(
+    f*C = \int_0^t f(t-\tau) C(\alpha, \beta, \tau) d\tau
+    \)
+    \(
+    f(t) = \int_{C-i\infty}^{C+i\infty} L[f(s)] ds
+    \)
+    where C is selected s.t. the path of integration is to the right of all singularities of L[f] within the complex plane.
+
+    \(
+    f(t) = L^{-1}\left(\frac{L[f*C]}{L[C]}\right)
+    \)
+    by the convolution theorem
+    \(
+    L[f*g] = L[f]L[g]
+    \)
+    }
+    
+    ...
+    
+    For recirculations:
+    \begin{equation}
+    D(t) = C(\alpha, \beta, t) + C(2\alpha+1, \beta, t-T) + C(3\alpha+2, \beta, t-2T) + \dots
+    \end{equation}
+    
+    }
+    \end{column}
+    %
+    \end{columns}   %% End of multiple columns 
+    % 
+
+\end{frame}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../topic-slide-main"
+%%% End:

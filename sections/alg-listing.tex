@@ -1,0 +1,67 @@
+% !TEX root = ../digraph-main.tex
+
+\renewcommand{\thealgocf}{}
+\begin{algorithm}[H]
+  \small
+\SetKwInOut{Input}{Input}
+\SetKwInOut{Output}{Output}
+\SetKwRepeat{Do}{do}{while}
+\SetKwFunction{filter}{filter}
+{\bf Input:} $h$\,
+// standardized clustering function with d.m. property
+\\
+\phantom{{\bf Input:}} $G$
+//  weakly connected digraph
+\\
+{\bf Output:}  ${\cal B}_{\min} = ({\cal B}_{\Omega}, {\cal B}_{\theta})$  
+// a pair of ordered lists
+\\
+{\bf Initialization:}
+${\cal B}_{\Omega} \gets \{\Omega_V, \Omega_v\}, \, 
+{\cal B}_{\theta} \gets \{0, \pi/4, \pi/2\}$
+\\[0.1em]
+\phantom{{\bf Initialization:}}
+$\mbox{\rm T}  \gets \{\,\overline{\Omega_V \Omega_v}\, \}$
+// candidate line-segment set
+
+\While{\rm T $\neq \emptyset$ } {
+  $ \ell = \overline{ \Omega_{a}\Omega_{b} }   \gets
+  {\tt getSegment}(\, \mbox{\rm T} \,) $
+  \\ 
+  $\mbox{\rm T} \gets \mbox{\rm T} - \ell; \,\quad
+  \gamma_{\ell} \gets -1/{\tt slope}(\,\ell\,); \,\quad
+  \theta_{\ell} \gets {\rm atan}(\gamma_{\ell})$
+  \\
+  $ \Omega_{\ell} \gets
+  \argmin\{ h(\Omega,\gamma_{\ell}) \mid \Omega \in \mathcal{L}(G) \} $ 
+  \\
+  \If{ $ {\tt offSegment}(\ell, \Omega_\ell) $ }
+  {
+    $\mbox{\rm T}_{\phantom{\theta}}\, \gets
+    \mbox{\rm T} \cup
+    \{ \overline{\Omega_{a}\Omega_{\ell}},  \overline{\Omega_{\ell}\Omega_{b}} \}$
+    \\
+    $\theta_{\rm a{\ell}} \gets 
+      {\rm atan}
+      \left( 
+        -1 / {\tt slope}( \overline{\Omega_a \Omega_{\ell}} ) 
+      \right)$ 
+    \\
+    $\theta_{\rm {\ell}b} \gets 
+      {\rm atan}
+      \left( 
+        -1 / {\tt slope}( \overline{\Omega_{\ell} \Omega_b} )
+      \right)$
+    \\
+    $ {\cal B}_{\theta}\, \gets {\tt insert}(
+      {\cal B}_{\theta},
+      \{ \theta_{\rm a{\ell}}, \theta_{\rm {\ell}b} \}
+     ); \,\,\,
+     {\cal B}_{\theta} \gets {\cal B}_{\theta}- \{\theta_{\rm \ell}\}$
+    \\
+    ${\cal B}_{\Omega} \gets {\tt insert}( {\cal B}_{\Omega}, \Omega_{\ell} )$
+  } % End of IF 
+} % End of WHILE
+%
+%\textcolor{red}{\em problem with updating} $\Theta$ in ${\cal B}_\min$ 
+\end{algorithm}

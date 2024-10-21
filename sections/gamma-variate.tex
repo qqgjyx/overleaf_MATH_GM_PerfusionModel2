@@ -1,0 +1,48 @@
+% gamma-variate.tex
+%
+% Drafted by Juntang on August 20, 2024
+% Adjusted by Juntang on August 22, 2024
+
+\begin{frame}
+  \frametitle{Gamma Variate Function}
+    \cite{thompsonIndicatorTransitTime1964}
+    \begin{columns}
+    %% double-column layout 
+    \begin{column}{0.45\textwidth}                 %% Left Column 
+    {\small
+    \begin{itemize}
+        \item GVF \& Adj. Sheppard's model:
+    \end{itemize}
+    \begin{equation}
+    C(t) = k(t - AT)^{\alpha} e^{-\frac{(t - AT)}{\sigma}}
+    \end{equation}
+    \begin{equation}
+    C(t) = \frac{A (t - AT)^{\alpha}}{\Gamma(1 + \alpha) \sigma^{1+\alpha}} e^{-\frac{(t - AT)}{\sigma}}
+    \end{equation}
+
+    $\begin{aligned}
+        t &= \text{time after injection} \\
+        C(t) &= \text{indicator concentration at time, } t \\
+        k &= \text{constant scale factor} \\
+        AT &= \text{appearance time} \\
+        \alpha, \sigma &= \text{arbitrary parameters, } 1/\sigma = Q/V \\
+        A &= \text{total area under the curve, } I/Q
+    \end{aligned}$
+    }
+    \end{column}
+    
+    \hspace*{4em}                                                          %%  make space between columns 
+    
+    \begin{column}{0.42\textwidth}                                %% Right Column 
+        Indicator transit time has been shown to exhibit the mathematical properties of a general class of random variables, known as "gamma variates." Curve-fitting techniques were employed to show that the arterial indicator curves are equivalent to frequency distribution functions for this class of variables.
+    \end{column}
+    %
+    \end{columns}   %% End of multiple columns 
+    % 
+
+\end{frame}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../topic-slide-main"
+%%% End:

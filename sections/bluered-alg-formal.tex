@@ -1,0 +1,57 @@
+%%
+%% bluered-alg-formal.tex
+%%
+
+
+\begin{frame}{BlueRed: algorithm DT(I)}
+
+\begin{columns}
+%% double-column layout 
+\begin{column}{0.45\textwidth}                 %% Left Column 
+
+{\small \bf Descending Triangulation (I)}
+% 
+\begin{overprint}
+\onslide<1>\scalebox{0.7}{
+\begin{minipage}{1.5\textwidth}
+    \input{sections/alg-listing}
+\end{minipage}
+}
+\end{overprint}
+
+\vspace*{0.5em}
+
+{\small \bf DT(I) properties:}
+  \begin{list}{$\ast$}{\itemsep = -1pt \leftmargin = 10pt}
+    \footnotesize 
+	\item fully autonomous, in $p$ steps
+	\item theoretically guaranteed to reach ${\cal B}_{\min}$
+	\item low complexity: $p\!$ $\times\!$ cost ($\gamma$-specific search)
+	\item simple, efficient: successive triangulation steps
+\end{list}
+% 
+\end{column}
+
+\hspace*{4em}                                                          %%  make space between columns 
+
+\begin{column}{0.42\textwidth}                                %% Right Column 
+  %
+  Five points: 
+  \begin{enumerate}
+  \item problem description, including preliminary when necessary 
+  \item state of the art, citing notable  related work,
+     knowledge or technology gaps 
+  \item method description 
+  \item analytical, experimental evidence, claims 
+  \item discussion: advance made, potential promised, remaining limitation, lessons learned 
+  \end{enumerate}
+ %  
+\end{column}
+%
+\end{columns}   %% End of multiple columns 
+% 
+\end{frame}
+
+%%
+%%
+%% 

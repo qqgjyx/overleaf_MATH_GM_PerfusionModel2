@@ -1,0 +1,119 @@
+%
+%  MAIN driver/organizer for slide presentation
+%
+
+\documentclass[aspectratio=169]{beamer}
+
+%%
+\makeatletter
+\defbeameroption{show only notes}[]% 
+{
+\beamer@notestrue
+\beamer@notesnormalsfalse
+}
+\makeatother
+
+\setbeameroption{hide notes}
+
+%%  ... include packages
+
+\input{preamble/packages}
+
+\input{preamble/customization}
+
+\input{preamble/graphics}
+
+\input{preamble/extras}
+
+%% ============ set up the title slide and footer information
+
+\input{sections/title}
+
+% ========== bibliography
+\bibliography{MATH.bib}
+
+\begin{document}
+
+
+\frame{\titlepage}                     % the very first slide frame 
+
+\begin{frame}[noframenumbering,plain]
+  \frametitle{Outline}
+  \tableofcontents
+\end{frame}
+
+%%  ---------- Outline 
+% \part{Part I}
+
+
+
+%% ----------- Problem description 
+
+\section{Backgrounds}
+\subsection{Problem Description}
+\input{sections/problem-description}
+\subsection{Assumptions}
+\input{sections/assumptions}
+\subsection{Gamma Variate Function}
+\input{sections/gamma-variate}
+\subsection{Gamma Variate Function More}
+\input{sections/gamma-variate-more}
+\subsection{State of the Art (I)}
+\input{sections/state-of-the-art_patent}
+\subsection{State of the Art (II)}
+\input{sections/state-of-the-art_straka}
+
+
+
+%% ----------- Method
+
+\section{Method}
+\subsection{Our Model}
+\input{sections/method-our-model}
+\subsection{Comparison of Kernels}
+\input{sections/method-comparision}
+\input{sections/method-comparision-1}
+
+% \input{sections/bluered-dcp-v2}
+% \input{sections/bluered-har-v2}
+% \input{sections/bluered-phase}
+
+%% ----------- Algorithm 
+
+% \input{sections/bluered-alg-formal}
+
+% \input{sections/bluered-alg-informal}
+
+%% ----------- Experiments
+
+\input{sections/exp-gvf}
+
+% \input{sections/exp-polblogs}
+% \input{sections/exp-mnist}
+% \input{sections/exp-citation}
+
+%% ----------- Discussion
+
+% \input{sections/discussion}
+
+
+%% -----------  Acknowledgement
+
+\input{sections/acknowledgement}
+
+
+%% ============ BIBLIOGRAPHY
+\section{Bibliography}
+\appendix
+\begin{frame}[noframenumbering,plain,allowframebreaks]{Bibliography}
+    \printbibliography[heading=none]
+\end{frame}
+
+
+\end{document}
+
+
+%%%%
+
+%%%%  provided by Xiaobai Sun 
+%%%%

@@ -1,0 +1,82 @@
+%
+% outline.tex
+% 
+
+\begin{frame}{Outline}
+  %%
+  %% ======== double-column layout: left column & right column
+  %%
+  \begin{columns}[T]
+    %% ------- Left column 
+    \begin{column}{0.55\textwidth}
+    %% 
+      {\bf \large Digraph clustering/Community detection: }
+      % 
+      \begin{list}{$\circ$}{\leftmargin=15pt}
+        \small
+        \item Pairwise adjacency $\large \bm{ \Longrightarrow } $
+                  community membership
+        \item  Indispensable to knowledge discovery
+        \item  Longstanding challenges
+      \end{list}
+
+      \vspace*{0.5em}                           %% make vertical space 
+
+      {\bf \large The BlueRed method:}
+      %
+      \begin{list}{$\triangleright$}{\leftmargin=15pt}
+        \small
+        \item Principle, analysis and model
+        \item BlueRed clustering functions for digraphs ($\ast$)
+        \item Effective, efficient algorithms
+        \\ enabling high-performance graph clustering
+      \end{list}
+
+      \vspace*{0.5em}
+
+      {\bf \large Empirical evidence:}
+      \begin{list}{$\diamond$}{\leftmargin=15pt}
+        \small
+        \item Benchmark on {\tt Polblogs}, {\tt MNIST-digit images}
+        \item Application to {\tt CITE75\_99}
+        {\footnotesize (3.7M US patents) }
+      \end{list}
+      % 
+    \end{column}%% End of Left Column 
+
+    %  ----- Right column 
+    %  
+    \begin{column}{0.44\textwidth}
+      % 
+      % ... template to insert an image
+      % 
+      \begin{figure}
+        %
+        \begin{subfigure}{.55\textwidth}
+          % 
+          \includegraphics[width=.9\textwidth]%
+          {figures/MNIST_embedding_groundtruth_transparent.png}
+          % 
+         \caption{MNIST handwritten digits: 70,000 images}
+        \end{subfigure}
+       \\ 
+        \begin{subfigure}{.35\textwidth}
+          % 
+          \includegraphics[width=.9\textwidth]%
+          {figures/MNIST_embedding_groundtruth_transparent.png}
+          % 
+         \caption{MNIST handwritten digits: 70,000 images}
+        \end{subfigure}
+      \end{figure}
+      % 
+    \end{column}%% End of Right Column 
+
+  \end{columns}%% End of Multiple Columns 
+
+
+\end{frame}
+
+
+%%
+%%  
+%% 
