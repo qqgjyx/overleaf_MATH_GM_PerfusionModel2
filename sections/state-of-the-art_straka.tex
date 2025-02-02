@@ -6,16 +6,17 @@
 \begin{frame}
   \frametitle{State of the Art (II)}
   \cite{strakaRealTimeDiffusion2010}
-    \begin{columns}
-    %% double-column layout 
-    \begin{column}{0.45\textwidth}                 %% Left Column 
+    \begin{columns}[T]
+    \begin{column}{0.55\textwidth}
     {\small
     \begin{enumerate}
         \item $C_{AIF} \rightarrow (C_{in}) \rightarrow C_{tissue}$:
         \begin{equation}
+            \small
             C_{tissue}(t) = \left( C_{AIF} * R_{1\&2}^{[S]} \right)(t)
         \end{equation}
         \begin{equation}
+            \small
             R_{1\&2}^{[S]}(t) = \frac{1}{TR}FT^{-1}\{g(f)\frac{c_t(f)}{c_a(f)}\}
         \end{equation}
         

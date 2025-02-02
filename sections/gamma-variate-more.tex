@@ -21,13 +21,12 @@
     {\tiny
     where $i$ is the indice of the chamber
     
-    \(
-    C_{1}(t) = C_{0}e^{-t/\sigma} 
+    $C_{1}(t) = C_{0}e^{-t/\sigma}$
 
-    C_{2}(t) = C_{0}\frac{t}{\sigma}e^{-t/\sigma} 
+    $C_{2}(t) = C_{0}\frac{t}{\sigma}e^{-t/\sigma}$
 
-    C_{3}(t) = \frac{C_{0}}{2}(\frac{t}{\sigma})^{2}e^{-t/\sigma}
-    \)}
+    $C_{3}(t) = \frac{C_{0}}{2}(\frac{t}{\sigma})^{2}e^{-t/\sigma}$
+    }
     \vspace{-8pt}
     \begin{equation}
     \Leftrightarrow C_{n}(t) = \frac{C}{(n-1)!}(\frac{t}{\sigma})^{n-1}e^{-t/\sigma}
@@ -39,17 +38,15 @@
     \begin{equation}
     \Leftrightarrow C(\alpha, \sigma, t) = \frac{t^\alpha}{\Gamma(\alpha+1)\sigma^{\alpha+1}}e^{-t/\sigma}
     \end{equation}
-
     
     }
     \end{column}
     
-    \hspace*{4em}                                                          %%  make space between columns 
+    \hspace*{2em}                                                          %%  make space between columns 
     
     \begin{column}{0.5\textwidth}                                %% Right Column 
     {\tiny
     \begin{block}{\textwidth}
-        \tiny
         \cite{sheppardMathematicalConsiderationsIndicator1954}
         \begin{itemize}
             \item Stochasic model where tracer follow $1d$ random walk; Poisson distribution:
@@ -59,11 +56,9 @@
         \end{equation}
         reduced to a GVF by substituting
     
-        \(
-        \alpha = n - 1
+        $\alpha = n - 1$
     
-        \sigma = 1 / n
-        \)
+        $\sigma = 1 / n$
         \begin{itemize}
             \item CON: not $\sigma > 1$ (\cite{thompsonIndicatorTransitTime1964})
         \end{itemize}
@@ -72,44 +67,26 @@
     \begin{itemize}
         \item PRO: deterministic, theoretical $\rightarrow$ physiologic
     \end{itemize}
-    {\tiny
-    \(
-    L[f(s)] = \int_0^\infty e^{-st} f(t) dt
-    \)
+    
+    $L[f(s)] = \int_0^\infty e^{-st} f(t) dt$
     and
-    \(
-    f*C = \int_0^t f(t-\tau) C(\alpha, \beta, \tau) d\tau
-    \)
-    \(
-    f(t) = \int_{C-i\infty}^{C+i\infty} L[f(s)] ds
-    \)
+    $f*C = \int_0^t f(t-\tau) C(\alpha, \beta, \tau) d\tau$
+    
+    $f(t) = \int_{C-i\infty}^{C+i\infty} L[f(s)] ds$
     where C is selected s.t. the path of integration is to the right of all singularities of L[f] within the complex plane.
 
-    \(
-    f(t) = L^{-1}\left(\frac{L[f*C]}{L[C]}\right)
-    \)
+    $f(t) = L^{-1}\left(\frac{L[f*C]}{L[C]}\right)$
     by the convolution theorem
-    \(
-    L[f*g] = L[f]L[g]
-    \)
-    }
-    
-    ...
+    $L[f*g] = L[f]L[g]$
     
     For recirculations:
     \begin{equation}
     D(t) = C(\alpha, \beta, t) + C(2\alpha+1, \beta, t-T) + C(3\alpha+2, \beta, t-2T) + \dots
     \end{equation}
-    
     }
     \end{column}
-    %
-    \end{columns}   %% End of multiple columns 
-    % 
-
+    \end{columns}
 \end{frame}
-
-
 
 %%% Local Variables:
 %%% mode: latex

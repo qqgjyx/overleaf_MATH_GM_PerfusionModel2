@@ -1,27 +1,24 @@
 ##
-SHELL := /bin/bash # Use bash syntax
+shell = /bin/bash
 
-MAIN = topic-slide-main
-# "make" target
+main = topic-slide-main
 
-all: pdf
+.DEFAULT_GOAL := help
 
-interactive:			## Interactively build PDF when changing sources
-	latexmk -pdf -pdflatex="pdflatex" -pvc $(MAIN)
+.PHONY: all clean
 
-
-pdf:					## PDF compilation
-	latexmk -pdf -pdflatex="pdflatex --synctex=1 '\input{$(MAIN)}'" $(MAIN)
-
-
-update: up				## svn update
-up:
-	svn up ./../ ./
+all:
+	latexmk -pdf $(main)
 
 
 clean:				## clean-up
-	rm -f *.bbl *.blg *.log *.aux *.nav *.out *.snm *.synctex.gz *.toc \
-	      $(MAIN).pdf *.vrb *.bcf *.run.xml *.xwm *~ *.fdb_latexmk, *-blx.bib
+	latexmk -C $(main).tex
+	rm -f $(main).bbl $(main).run.xml $(main).bib
 	rm -f sections/*.{log,bu}
 	rm -f sections/*~
 	rm -f preamble/*~
+
+# -------------------- Makefile help
+
+help:				## Print help for Makefile list
+	@grep -E '(^[a-zA-Z_-]+:.*?##.*$$)|(^# --------------------)' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}{printf "\033[32m %-35s\033[0m %s\n", $$1, $$2}' | sed -e 's/\[32m # --------------------/[33m===============/'

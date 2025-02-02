@@ -19,6 +19,19 @@
 
 \input{preamble/packages}
 
+\usepackage[
+backend=biber, 
+citestyle=ieee,
+sorting=nyt,    
+doi=false,
+url=false,
+isbn=false,
+giveninits=true,
+maxbibnames=9999,
+hyperref]{biblatex}
+
+\addbibresource{MATH.bib} 
+
 \input{preamble/customization}
 
 \input{preamble/graphics}
@@ -30,7 +43,6 @@
 \input{sections/title}
 
 % ========== bibliography
-\bibliography{MATH.bib}
 
 \begin{document}
 
@@ -103,11 +115,8 @@
 
 
 %% ============ BIBLIOGRAPHY
-\section{Bibliography}
-\appendix
-\begin{frame}[noframenumbering,plain,allowframebreaks]{Bibliography}
-    \printbibliography[heading=none]
-\end{frame}
+\printbibliography
+
 
 
 \end{document}
